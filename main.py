@@ -1,5 +1,5 @@
-listOfItems = ['apple', 'banana', 'pear', 'grape']
-costOfItem = [2, 1.7, .5, 3]
+listOfItems = ['apple', 'banana', 'pear', 'grape'] # this is just to pre fill with some examples
+costOfItem = [2, 1.7, .5, 3] # examples price
 
 def addItemToList(item, price, knowUpdateing):
   global listOfItems
@@ -61,17 +61,18 @@ def main():
     item = raw_input('What item? ')
     if item not in listOfItems:
       print 'I must not know jack'
-      if type(item) == int:
+      if type(item) == 'int':
          print 'please input a name with no numbers'
          main()
-      print 'But would you like to add ' +item+ ' to known items'
-      responce = raw_input('')
-      if responce == 'yes':
-        price = raw_input('At what price')
-        addItemToList(item, price, False)
-        main()
-      elif responce == 'no':
-        main()
+      else:
+        print 'But would you like to add ' +item+ ' to known items'
+        responce = raw_input('')
+        if responce == 'yes':
+          price = raw_input('At what price')
+          addItemToList(item, price, False)
+          main()
+        elif responce == 'no':
+          main()
   
     amount = raw_input('How many? ')
   
