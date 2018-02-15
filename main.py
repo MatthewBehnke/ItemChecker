@@ -53,8 +53,8 @@ def cost(name, amount):
 def main():
   print ''
   print 'What would you like to do?'
-  print 'Check price of item?'
-  print 'Change price of item?'
+  print 'Check price of an item?'
+  print 'Change price of an item?'
   toDo = raw_input('')
   if toDo.lower() in 'check' :
     print listOfItems
@@ -79,7 +79,7 @@ def main():
       print 'Your cost will be $' + str(cost(item, amount)) + ' for ' + amount + ' ' + item +"s"
       main()
   elif toDo.lower() in 'change':
-    print 'remove or update?'
+    print 'remove, add, or update? '
     x = raw_input('')
     if x.lower() == 'update':
       print listOfItems
@@ -103,6 +103,10 @@ def main():
       print listOfItems
       removeItemFromList(raw_input('what to remove? '))
       main()
+    elif x.lower() == 'add':
+      name = raw_input('What item? ')
+      price = raw_input('how much')
+      addItemToList(name, price, False)
     else:
       main()
   else:
